@@ -1,1 +1,23 @@
-<h1>List of ships</h1>
+<div class='container'>
+
+  <h1>List of ships</h1>
+
+  <div class="row">
+    <% @ships.each do |ship| %>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= ship.name %></h5>
+        <div class="card-footer text-muted">
+        <p><%= ship.category %> <%= ship.daily_price%>€</p>
+        <p><%= ship.city %>, Spot: <%= ship.docking_number %></p>
+        </div>
+        <a href="#" class="btn btn-primary">Book this Boat</a>
+      </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
