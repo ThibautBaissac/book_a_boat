@@ -1,9 +1,40 @@
 <div class="container">
-  <%= current_user.first_name %>
-  <ul>
-    <%= @user_bookings.each do |booking| %>
-      <li><strong>Start date:</strong> <%= booking.start_date %></li>
-      <li><strong>End date:</strong> <%= booking.end_date %></li>
-    <% end %>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Ships</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Bookings</a>
+    </li>
   </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <ul>
+        <li><strong>First name:</strong> <%= current_user.first_name %></li>
+        <li><strong>Last name:</strong> <%= current_user.last_name %></li>
+      </ul>
+      <%= link_to edit_user_registration_path, class: "btn btn-primary" do %>
+        Edit profile
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <ul>
+        <% @user_ships.each do |ship| %>
+          <li><strong>Name:</strong> <%= ship.name %></li>
+          <li><strong>City:</strong> <%= ship.city %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <ul>
+        <% @user_bookings.each do |booking| %>
+          <li><strong>Start date:</strong> <%= booking.start_date %></li>
+          <li><strong>End date:</strong> <%= booking.end_date %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
