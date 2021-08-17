@@ -34,13 +34,13 @@ class ShipsController < ApplicationController
 
   def update
     @ship.update(ship_params)
-    redirect_to ship_path(@ship)
+    redirect_to dashboard_path
     authorize @ship
   end
 
   def destroy
     @ship.destroy
-    redirect_to ships_path
+    redirect_to dashboard_path
     authorize @ship
   end
 
