@@ -10,16 +10,6 @@
         <div class="col">
           <h1><%= @ship.name %></h1>
         </div>
-        <div class="col">
-          <%# if current_user %>
-          <%= link_to ships_path, method: :delete, class: "btn btn-primary btn-sm" do %>
-            <i class="far fa-edit"></i>
-          <% end %>
-          <%= link_to ships_path, method: :delete, class: "btn btn-primary btn-sm" do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
-          <%# end %>
-        </div>
       </div>
       <p><strong>Category:</strong> <%= @ship.category %></p>
       <p><strong>Daily price:</strong> <%= @ship.daily_price %></p>
@@ -32,15 +22,16 @@
     <p><strong>Description:</strong> <%= @ship.description %></p>
   </div>
 
-  <%= link_to ships_path, class: "btn btn-secondary" do %>
-    Back to ships list <i class="fas fa-anchor"></i>
-  <% end %>
-
-
-  <%= simple_form_for [@ship, @booking] do |f| %>
-    <%= f.input :start_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-    <%= f.input :end_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-    <%= f.button :submit, "Book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
-  <% end %>
-
+  <div class="row mx-0 mb-4">
+    <%= link_to ships_path, class: "btn btn-secondary" do %>
+      Back to ships list <i class="fas fa-anchor"></i>
+    <% end %>
+  </div>
+  <div class='mb-4'>
+    <%= simple_form_for [@ship, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+      <%= f.input :end_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+      <%= f.button :submit, "Book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+    <% end %>
+  </div>
 </div>
