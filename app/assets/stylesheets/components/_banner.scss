@@ -2,4 +2,49 @@
   background-size: cover;
   background-position: center;
   height: 600px;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.search-bar-container {
+  margin: auto;
+}
+
+.search-bar {
+  background-color: white;
+  border-radius: 30px;
+  padding: 6px;
+  overflow: hidden;
+}
+
+.search-bar .col-padding {
+  padding: 0;
+}
+
+.search-bar .form-control {
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.search-bar .input-border {
+  border-right: 1px solid grey;
+  border-radius: 0;
+}
+
+.search-btn-container {
+  flex-grow: unset;
+}
+
+.search-link {
+  padding: 20;
+}
+
+.search-btn-container .search-btn{
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  line-height: unset;
 }
