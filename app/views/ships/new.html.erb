@@ -1,0 +1,13 @@
+
+<div class='container'>
+  <%= simple_form_for @ship do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :daily_price %>
+    <%= f.input :city %>
+    <%= f.input :docking_number %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, "Add Boat", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+  <% end %>
+</div>
