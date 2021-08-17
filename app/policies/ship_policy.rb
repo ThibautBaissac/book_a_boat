@@ -12,6 +12,18 @@ class ShipPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    true
+  end
+
+  def edit?
+    true
+  end
+
+  def destroy?
+    true
+  end
+
   def show?
     true
   end

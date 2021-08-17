@@ -22,10 +22,22 @@
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <ul>
+       <div class="row">
         <% @user_ships.each do |ship| %>
-          <li><strong>Name:</strong> <%= ship.name %></li>
-          <li><strong>City:</strong> <%= ship.city %></li>
+          <div class="col-sm-4">
+            <div class="card mb-4" style="width: 18rem;">
+            <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%= ship.name %></h5>
+                <div class="card-footer text-muted">
+                  <p><%= ship.category %> <%= ship.daily_price%>€</p>
+                  <p><%= ship.city %>, Spot: <%= ship.docking_number %></p>
+                </div>
+              <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn btn-primary"%>   </div>
+            </div>
+          </div>
         <% end %>
+
       </ul>
     </div>
     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">

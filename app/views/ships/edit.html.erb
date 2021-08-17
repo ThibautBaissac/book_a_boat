@@ -8,7 +8,12 @@
     <%= f.input :docking_number %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, "Add Boat", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+    <%= f.button :submit, "Confirm Edit", class: "btn btn-primary btn-lg btn-block btn-booking" %>
   <% end %>
 
+
+    <%= link_to "Delete #{@ship.name}",
+            ship_path(@ship),
+            method: :delete,
+            data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-lg btn-block"%>
 </div>

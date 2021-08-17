@@ -29,16 +29,19 @@ class ShipsController < ApplicationController
   end
 
   def edit
+    authorize @ship
   end
 
   def update
     @ship.update(ship_params)
     redirect_to ship_path(@ship)
+    authorize @ship
   end
 
   def destroy
     @ship.destroy
     redirect_to ships_path
+    authorize @ship
   end
 
   private
