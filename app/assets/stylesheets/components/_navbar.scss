@@ -8,5 +8,19 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+}
+
+#logo-title {
+  font-weight: 700;
+  font-size: 40px;
+  color: $dark-blue;
+}
+
+.navbar-lewagon .navbar-btn {
+  font-size: 21px;
+
+  p {
+    font-size: 25px;
+  }
 }

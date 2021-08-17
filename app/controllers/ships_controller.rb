@@ -1,11 +1,14 @@
 class ShipsController < ApplicationController
   before_action :set_ship, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @ships = Ship.all
+    # @ships = Ship.all
+    @ships = policy_scope(Ship).order(created_at: :desc)
   end
 
   def show
+    authorize @ship
   end
 
   def new
@@ -14,6 +17,8 @@ class ShipsController < ApplicationController
 
   def create
     @ship = Ship.new(ship_params)
+    authorize @ship
+
     if @ship.save!
       redirect_to ship_path(@ship)
     else
@@ -41,6 +46,6 @@ class ShipsController < ApplicationController
   end
 
   def ship_params
-    params.require(:ship).permit(:user, :booking, :daily_price)
+    params.require(:ship).permit(:user, :booking, :daily_price, :description)
   end
 end
