@@ -1,0 +1,9 @@
+<div class="container">
+  <%= current_user.first_name %>
+  <ul>
+    <%= @user_bookings.each do |booking| %>
+      <li><strong>Start date:</strong> <%= booking.start_date %></li>
+      <li><strong>End date:</strong> <%= booking.end_date %></li>
+    <% end %>
+  </ul>
+</div>
