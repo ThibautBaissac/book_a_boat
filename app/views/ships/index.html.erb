@@ -15,7 +15,7 @@
               <p><%= ship.category %> <%= ship.daily_price%>€</p>
               <p><%= ship.city %>, Spot: <%= ship.docking_number %></p>
             </div>
-          <%= link_to "Book this Boat", new_ship_booking_path(ship), class: "btn btn-primary"%>        </div>
+          <%= link_to "Learn more", ship_path(ship), class: "btn btn-primary"%>   </div>
         </div>
       </div>
     <% end %>

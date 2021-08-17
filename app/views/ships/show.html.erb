@@ -31,10 +31,16 @@
   <div class="row mx-0">
     <p><strong>Description:</strong> <%= @ship.description %></p>
   </div>
+
   <%= link_to ships_path, class: "btn btn-secondary" do %>
     Back to ships list <i class="fas fa-anchor"></i>
   <% end %>
-  <%= link_to new_ship_booking_path(@ship), class: "btn btn-primary" do %>
-    Book this ship <i class="far fa-calendar-check"></i>
+
+
+  <%= simple_form_for [@ship, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+    <%= f.input :end_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+    <%= f.button :submit, "Book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
   <% end %>
+
 </div>
