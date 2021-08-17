@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user_info = current_user
+    @user_ships = Ship.where(user: current_user)
     @user_bookings = Booking.where(user: current_user)
   end
 end
