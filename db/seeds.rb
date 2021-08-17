@@ -8,13 +8,15 @@
 
 require "faker"
 
-puts "Creating users..."
+Ship.destroy_all
 User.destroy_all
+
+
+puts "Creating users..."
 user_1 = User.new(first_name: "Daniela", last_name: "Zubia", email: "test1@gmail.com", password: "123456")
 user_1.save!
 
 puts "Creating ships..."
-Ship.destroy_all
 5.times do
   name = Faker::GreekPhilosophers.name
   description = Faker::Restaurant.description
