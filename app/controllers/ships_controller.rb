@@ -8,6 +8,9 @@ class ShipsController < ApplicationController
   end
 
   def show
+
+    @ship = Ship.find(params[:id])
+    @booking = Booking.new
     authorize @ship
   end
 
