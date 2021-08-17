@@ -20,10 +20,10 @@ puts "Creating ships..."
 5.times do
   name = Faker::GreekPhilosophers.name
   description = Faker::Restaurant.description
-  category = ["Boat", "Cruise", "Pirate boat", "Yacht", "Pedal boat", "Rowboat", "Bark", "Catamaran", "Countainer carrier", "Paper boat"].sample
+  category = ["Boat", "Cruise", "Pirate boat", "Yacht", "Pedal boat", "Rowboat", "Bark", "Catamaran", "Countainer carrier", "Paper boat", "Flamingo boat", "Vessel", "Sailboat", "Optimist", "Laser", "Sailing Regatta", "Jet Boats", "Cabin Cruisers" ].sample
   city = Faker::Address.city
   docking_number = (1..100).to_a.sample
-  daily_price = [1, 9, 100, 450, 1000, 8700, 36000, 122000, 50000].sample
+  daily_price = [1, 9, 100, 450, 1000, 8700, 9500, 9999, 15000, 16999, 36000, 122000, 50000].sample
   ship = Ship.new(name: name, description: description, category: category, city: city, docking_number: docking_number, daily_price: daily_price, user: user_1)
   ship.save!
   puts "Created #{ship.name}"
