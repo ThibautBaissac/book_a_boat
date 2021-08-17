@@ -1,53 +1,40 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "boat_suez.jpeg" %>
-        <div class="container">
-          <div class="carousel-caption text-left">
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "boat-sun.jpg" %>
-
-        <div class="container">
-          <div class="carousel-caption">
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "pedalo.jpeg" %>
-        <div class="container">
-          <div class="carousel-caption text-right">
-          </div>
-        </div>
-      </div>
+  <div class="row my-3">
+    <%# CAROUSEL %>
+    <div class="col-sm-6">
+      <%= render "shared/carousel" %>
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-      <h1><%= @ship.name %></h1>
-      <p>Category: <strong><%= @ship.category %></strong></p>
-      <p>Daily price: <strong><%= @ship.daily_price %></strong></p>
-      <p>City: <strong><%= @ship.city %></strong></p>
-      <p>Docking number: <strong><%= @ship.docking_number %></strong></p>
+    <%# SHIP INFO %>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col">
+          <h1><%= @ship.name %></h1>
+        </div>
+        <div class="col">
+          <%# if current_user %>
+          <%= link_to ships_path, method: :delete, class: "btn btn-primary btn-sm" do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to ships_path, method: :delete, class: "btn btn-primary btn-sm" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+          <%# end %>
+        </div>
+      </div>
+      <p><strong>Category:</strong> <%= @ship.category %></p>
+      <p><strong>Daily price:</strong> <%= @ship.daily_price %></p>
+      <p><strong>City:</strong> <%= @ship.city %></p>
+      <p><strong>Docking number:</strong>r <%= @ship.docking_number %></p>
     </div>
   </div>
+  <%# SHIP DESCRIPTION %>
+  <div class="row mx-0">
+    <p><strong>Description:</strong> <%= @ship.description %></p>
+  </div>
+  <%= link_to ships_path, class: "btn btn-secondary" do %>
+    Back to ships list <i class="fas fa-anchor"></i>
+  <% end %>
+  <%= link_to ships_path, class: "btn btn-primary" do %>
+    Book this ship <i class="far fa-calendar-check"></i>
+  <% end %>
 </div>
