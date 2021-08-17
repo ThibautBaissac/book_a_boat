@@ -22,31 +22,42 @@
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <ul>
-       <div class="row">
-        <% @user_ships.each do |ship| %>
-          <div class="col-sm-4">
-            <div class="card mb-4" style="width: 18rem;">
-            <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%= ship.name %></h5>
-                <div class="card-footer text-muted">
-                  <p><%= ship.category %> <%= ship.daily_price%>€</p>
-                  <p><%= ship.city %>, Spot: <%= ship.docking_number %></p>
-                </div>
-              <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn btn-primary"%>   </div>
+        <div class="row">
+          <% @user_ships.each do |ship| %>
+            <div class="col-sm-4">
+              <div class="card mb-4" style="width: 18rem;">
+                <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%= ship.name %></h5>
+                  <div class="card-footer text-muted">
+                    <p><%= ship.category %> <%= ship.daily_price%>€</p>
+                    <p><%= ship.city %>, Spot: <%= ship.docking_number %></p>
+                  </div>
+                  <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn btn-primary"%>   </div>
+              </div>
             </div>
-          </div>
-        <% end %>
-
-      </ul>
-    </div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-      <ul>
-        <% @user_bookings.each do |booking| %>
-          <li><strong>Start date:</strong> <%= booking.start_date %></li>
-          <li><strong>End date:</strong> <%= booking.end_date %></li>
-        <% end %>
-      </ul>
+          <% end %>
+        </ul>
+      </div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        <ul>
+          <% @user_bookings.each do |booking| %>
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= booking.ship.name %></h5>
+                    <p class="card-text"><strong>Start date:</strong> <%= booking.start_date %></p>
+                    <p class="card-text"><strong>End date:</strong> <%= booking.end_date %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
