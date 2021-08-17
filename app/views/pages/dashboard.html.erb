@@ -16,6 +16,7 @@
         <ul class='list-group'>
           <li class="list-group-item"><strong>First name:</strong> <%= current_user.first_name %></li>
           <li class="list-group-item"><strong>Last name:</strong> <%= current_user.last_name %></li>
+          <li class="list-group-item"><strong>email:</strong> <%= current_user.email %></li>
       </ul>
       <div class='mt-3'>
       <%= link_to edit_user_registration_path, class: "btn btn-primary" do %>
