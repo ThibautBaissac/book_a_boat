@@ -27,6 +27,7 @@ import "bootstrap";
 import { navbarOpacity } from "../components/_navbar";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initAutocomplete } from "../plugins/init_autocomplete";
+import { activeTab } from "../components/_tab";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   navbarOpacity();
+  activeTab();
 });
