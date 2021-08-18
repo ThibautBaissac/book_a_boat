@@ -33,7 +33,7 @@ Possibilité reprise place de port en location."]
   city = Faker::Address.city
   docking_number = (1..100).to_a.sample
   daily_price = [1, 9, 100, 450, 1000, 8700, 9500, 9999, 15000, 16999, 36000, 122000, 50000].sample
-  ship = Ship.new(name: name, description: description, category: category, city: city, docking_number: docking_number, daily_price: daily_price, user: user_1)
+  ship = Ship.new(name: name, description: description, category: category, address: address, docking_number: docking_number, daily_price: daily_price, user: user_1)
   ship.save!
   puts "Created #{ship.name}"
 end
