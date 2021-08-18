@@ -4,14 +4,14 @@
     <% @ships.each do |ship| %>
       <div class="col-sm-4">
         <div class="card mb-4" style="width: 18rem;">
-          <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+          <img class="card-img-top" src="<%= image_path("ships/barque_police_01.jpeg") %>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= ship.name %></h5>
             <div class="card-footer text-muted">
               <p><%= ship.category %> <%= ship.daily_price%>€</p>
               <p><%= ship.address %>, Spot: <%= ship.docking_number %></p>
             </div>
-            <%= link_to "Learn more", ship_path(ship), class: "btn btn-primary"%>   </div>
+            <%= link_to "Learn more", ship_path(ship), class: "btn btn-success mt-3"%>   </div>
         </div>
       </div>
     <% end %>
