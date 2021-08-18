@@ -19,3 +19,12 @@
 .card-img-top {
   padding: 10px;
 }
+
+.booking-card {
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 160px;
+  height: fit-content;
+}
