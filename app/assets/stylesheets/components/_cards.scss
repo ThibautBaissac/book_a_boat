@@ -1,3 +1,5 @@
+// CATEGORY CARDS ON HOMEPAGE
+
 .category-size {
   width: 100px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -19,6 +21,31 @@
 .card-img-top {
   padding: 10px;
 }
+
+// LEASE CATEGORY ON HOMEPAGE
+
+.lease-card {
+  height: 400px;
+  width: 80%;
+  margin: auto;
+  background-size: cover;
+  background-position: 0% 85%;
+  border-radius: 15px;
+}
+
+.lease-card .lease-text {
+  font-weight: 900;
+  color: $dark-blue;
+}
+
+.lease-card .btn-lease {
+  width: fit-content;
+  padding: 5px 25px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+// BOOKING CARD ON SHIP SHOW
 
 .booking-card {
   padding: 20px;
