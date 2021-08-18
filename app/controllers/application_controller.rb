@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
+  def after_sign_in_path_for(resource)
+    dashboard_path
+  end
 
   private
 

@@ -10,7 +10,7 @@
 }
 
 .navbar-lewagon.scroll {
-  background-color: turquoise;
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -21,6 +21,10 @@
   font-weight: 700;
   font-size: 40px;
   color: $dark-blue;
+}
+
+.navbar-lewagon .btn-container {
+  width: 60%;
 }
 
 .navbar-lewagon .navbar-btn {
@@ -35,4 +39,14 @@
 
 .navbar-lewagon .letter-spacing {
   letter-spacing: 2px;
+}
+
+@media (min-width: 250px) and (max-width: 1000px) {
+  .text-display {
+    display: none;
+  }
+
+  .navbar-lewagon .btn-container {
+    width: 80%;
+  }
 }

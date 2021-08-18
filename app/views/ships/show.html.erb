@@ -30,8 +30,8 @@
   <%# BOOKING %>
   <div class='mb-4'>
     <%= simple_form_for [@ship, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-      <%= f.input :end_date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
       <%= f.button :submit, "Book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
     <% end %>
   </div>

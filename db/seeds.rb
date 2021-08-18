@@ -27,7 +27,8 @@ user_5.save!
 puts "Creating ships..."
 5.times do
   name = Faker::GreekPhilosophers.name
-  description = Faker::Restaurant.description
+  description = ["Superbe ITALIAMARINE SANREMO 24 en très bon état !Très agréable en navigation et confortable au mouillage avec ses 2 bains de soleil à l'avant et à l'arrière.Les entretiens du moteur sont réalisés par un professionnel, factures à l'appui.Moteur Mercury Verado 225 Cv dont la réputation n'est plus à faire.", "Ce Nimbus Avanta F33 Flybridge est en bon état général Disposant de 4 couchages répartis dans 2 cabines, ce bateau est très habitable.
+Possibilité reprise place de port en location."]
   category = ["Boat", "Cruise", "Pirate boat", "Yacht", "Pedal boat", "Rowboat", "Bark", "Catamaran", "Countainer carrier", "Paper boat", "Flamingo boat", "Vessel", "Sailboat", "Optimist", "Laser", "Sailing Regatta", "Jet Boats", "Cabin Cruisers" ].sample
   city = Faker::Address.city
   docking_number = (1..100).to_a.sample
