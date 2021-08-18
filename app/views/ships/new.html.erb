@@ -2,7 +2,7 @@
 <div class='container'>
   <%= simple_form_for @ship do |f| %>
     <%= f.input :name %>
-    <%= f.input :category %>
+    <%= f.input :category, :collection => ["Boat", "Cruise", "Pirate boat", "Yacht", "Pedal boat", "Rowboat", "Bark", "Catamaran", "Countainer carrier", "Paper boat", "Flamingo boat", "Vessel", "Sailboat", "Optimist", "Laser", "Sailing Regatta", "Jet Boats", "Cabin Cruisers"] %>
     <%= f.input :daily_price %>
     <%= f.input :city %>
     <%= f.input :docking_number %>
