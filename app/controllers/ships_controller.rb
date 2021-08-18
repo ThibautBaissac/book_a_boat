@@ -11,7 +11,7 @@ class ShipsController < ApplicationController
     @booking = Booking.new
     authorize @ship
 
-    @markers =
+    @marker =
       {
         lat: @ship.latitude,
         lng: @ship.longitude,
