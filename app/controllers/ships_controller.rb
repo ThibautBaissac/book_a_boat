@@ -10,6 +10,13 @@ class ShipsController < ApplicationController
     @ship = Ship.find(params[:id])
     @booking = Booking.new
     authorize @ship
+
+    @markers =
+      {
+        lat: @ship.latitude,
+        lng: @ship.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { ship: @ship })
+      }
   end
 
   def new
@@ -51,6 +58,6 @@ class ShipsController < ApplicationController
   end
 
   def ship_params
-    params.require(:ship).permit(:user, :booking, :daily_price, :description, :name, :category, :city, :docking_number, :photo)
+    params.require(:ship).permit(:user, :booking, :daily_price, :description, :name, :category, :address, :docking_number, :photo)
   end
 end
