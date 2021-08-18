@@ -1,0 +1,21 @@
+.category-size {
+  width: 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.category-text {
+  text-align: center;
+  width: 100px;
+  margin-top: 10px;
+  color: $dark-blue;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.category-size .card-hover:hover {
+  background-color: $light-orange;
+}
+
+.card-img-top {
+  padding: 10px;
+}
