@@ -23,22 +23,36 @@
   background-color: white;
   border-radius: 30px;
   padding: 6px;
-  // overflow: hidden;
 }
 
 .search-bar .col-padding {
   padding: 0;
 }
 
+.search-bar .col-margin {
+  margin-right: 15px;
+}
+
 .search-bar .form-control {
   border: none;
+  //border-radius: 0px;
   outline: none;
   font-size: 18px;
 }
 
 .search-bar .input-border {
   border-right: 1px solid grey;
-  border-radius: 0;
+  border-radius: 0px;
+}
+
+.search-bar .first-input {
+  border-radius: 20% 0% 0% 20%;
+}
+
+.search-bar .input-focus:focus {
+  background-color: $light-blue;
+  border-radius: 20px;
+  border-right: none;
 }
 
 .search-btn-container {
