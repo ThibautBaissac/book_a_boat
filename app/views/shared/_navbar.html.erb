@@ -1,21 +1,23 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand d-flex align-items-center justify-content-between" do %>
     <%= image_tag "logo/buoy.png" %>
-    <h3 id="logo-title" class="ml-3 mb-0">book a boat</h3>
+    <h3 id="logo-title" class="ml-3 mb-0 text-display">book a boat</h3>
   <% end %>
 
-  <%= link_to new_ship_path, class: "navbar-btn btn btn-danger d-flex justify-content-between align-items-center" do %>
-    <i class="fas fa-plus"></i>
-    <p class="letter-spacing mb-0 ml-3">Lease your ship</p>
-  <% end %>
+  <div class="d-flex justify-content-between align-items-center btn-container">
+    <%= link_to new_ship_path, class: "navbar-btn btn btn-danger d-flex justify-content-between align-items-center" do %>
+      <i class="fas fa-plus"></i>
+      <p class="letter-spacing mb-0 ml-3">Lease your ship</p>
+    <% end %>
 
-  <% if current_user %>
-    <%= link_to destroy_user_session_path, method: :delete, class: "navbar-btn btn btn-success d-flex justify-content-between align-items-center" do %>
-      <p class="letter-spacing mb-0">Log out</p>
+    <% if current_user %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "navbar-btn btn btn-success d-flex justify-content-between align-items-center" do %>
+        <p class="letter-spacing mb-0">Log out</p>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_registration_path, class: "navbar-btn btn btn-success d-flex justify-content-between align-items-center" do %>
+        <p class="letter-spacing mb-0">Sign in</p>
+      <% end %>
     <% end %>
-  <% else %>
-    <%= link_to new_user_registration_path, class: "navbar-btn btn btn-success d-flex justify-content-between align-items-center" do %>
-      <p class="letter-spacing mb-0">Sign in</p>
-    <% end %>
-  <% end %>
+  </div>
 </div>
