@@ -1,18 +1,36 @@
 <div class='container'>
   <h1>List of ships</h1>
-  <div class="row">
+  <div class="row row-cols-4 justify-content-center">
     <% @ships.each do |ship| %>
-      <div class="col-sm-4">
-        <div class="card mb-4" style="width: 18rem;">
-          <img class="card-img-top" src="<%= image_path("ships/barque_police_01.jpeg") %>" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= ship.name %></h5>
-            <div class="card-footer text-muted">
-              <p><%= ship.category %> <%= ship.daily_price%>€</p>
-              <p><%= ship.address %>, Spot: <%= ship.docking_number %></p>
-            </div>
-            <%= link_to "Learn more", ship_path(ship), class: "btn btn-success mt-3"%>   </div>
-        </div>
+      <div class="card col mx-4 mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="<%= image_path("ships/barque_police_01.jpeg") %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= ship.name %></h5>
+          <div class="card-footer text-muted">
+            <p><%= ship.category %> <%= ship.daily_price%>€ la journée</p>
+            <p><%= ship.address %>, Spot: <%= ship.docking_number %></p>
+          </div>
+          <%= link_to "Learn more", ship_path(ship), class: "btn btn-success mt-3"%>   </div>
+      </div>
+      <div class="card col mx-4 mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="<%= image_path("ships/barque_11.jpeg") %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Rico Rico</h5>
+          <div class="card-footer text-muted">
+            <p><%= ship.category %> 2,40€ la journée</p>
+            <p>Carthagène, Colombie, Spot: 56</p>
+          </div>
+          <%= link_to "Learn more", ship_path(ship), class: "btn btn-success mt-3"%>   </div>
+      </div>
+      <div class="card col mx-4 mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="<%= image_path("ships/barque_6.jpeg") %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Casimir</h5>
+          <div class="card-footer text-muted">
+            <p><%= ship.category %> 69€ la journée</p>
+            <p>Lac Ontario, Canada, <br>Spot: 27</p>
+          </div>
+          <%= link_to "Learn more", ship_path(ship), class: "btn btn-success mt-3"%>   </div>
       </div>
     <% end %>
   </div>
