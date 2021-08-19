@@ -1,5 +1,12 @@
 <div class='container'>
-  <h1 class="mt-4">List of barks</h1>
+  <% if @ships[0].nil? %>
+    <div class="d-flex flex-column align-items-center">
+      <h3 class="mb-4" style="text-align: center; margin-top: 50px">There are no boats in this category yet... 🔜</h1>
+      <img style="margin: auto;" src="https://media.giphy.com/media/cjzkCDL3jZTZB6ki1B/giphy.gif">
+    </div>
+  <% else %>
+    <h1 class="mt-4 mb-3" style="text-align: center;"><%= @ships[0].category %>s</h1>
+  <% end %>
   <div class="row row-cols-4 justify-content-center">
     <% @ships.each do |ship| %>
       <div class="card col mx-4 mb-4" style="width: 18rem;">
