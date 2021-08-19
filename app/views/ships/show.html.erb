@@ -30,11 +30,20 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       <%# LINKS %>
-      <div class="row mx-0 mb-4">
-        <%= link_to ships_path, class: "btn btn-danger" do %>
-          Back to ships list <i class="fas fa-anchor"></i>
-        <% end %>
-      </div>
+      <% if @ship.user != current_user%>
+        <div class="row mx-0 mb-4">
+          <%= link_to ships_path, class: "btn btn-danger" do %>
+            Back to ships list <i class="fas fa-anchor"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="row mx-0 mb-4">
+          <%= link_to dashboard_path, class: "btn btn-danger" do %>
+            Dashboard <i class="fas fa-anchor"></i>
+          <% end %>
+        </div>
+      <% end %>
+
     </div>
     <%# BOOKING %>
     <div class='mb-4 booking-card'>
