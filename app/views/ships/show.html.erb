@@ -32,8 +32,8 @@
       <%# LINKS %>
       <% if @ship.user != current_user%>
         <div class="row mx-0 mb-4">
-          <%= link_to ships_path, class: "btn btn-danger" do %>
-            Back to ships list <i class="fas fa-anchor"></i>
+          <%= link_to root_path, class: "btn btn-danger" do %>
+            Make another search <i class="fas fa-anchor"></i>
           <% end %>
         </div>
       <% else %>
