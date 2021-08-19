@@ -34,7 +34,34 @@
     </form>
   </div>
 </div>
-
+<%# POPULAR %>
+<div class="container popular">
+  <h2 class="text-center my-3">Popular boats</h2>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="card"><a href="#"><%= image_tag "ships/barque_6.jpg", class: "card-img w-100 d-block" %></a>
+        <div class="card-img-overlay">
+          <h4 class="text-center">My amazing bark</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card"><a href="#"><%= image_tag "ships/boat_5.jpg", class: "card-img w-100 d-block" %></a>
+        <div class="card-img-overlay">
+          <h4 class="text-center">A great boat</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card"><a href="#"><%= image_tag "ships/yacht.jpg", class: "card-img w-100 d-block" %></a>
+        <div class="card-img-overlay">
+          <h4 class="text-center">What a yacht!</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%# CATEGORIES %>
 <div class="container mt-5">
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
     <div class="col mb-4 d-flex flex-column justify-content-around align-items-center">
@@ -87,7 +114,6 @@
     </div>
   </div>
 </div>
-
 <%# Want to lease your boat? %>
 <div class="lease-card d-flex flex-column justify-content-center align-items-center" style="background-image: url(https://cdn.dribbble.com/users/7523955/screenshots/15709833/media/a3e93f3a41d983d57bc50410e2c5dbf6.jpg?compress=1&resize=1600x1200);">
   <h2 class="lease-text mb-5">Want to lease your boat? Nothing more simple!</h2>
@@ -95,44 +121,42 @@
     <p class="letter-spacing mb-0">Lease your ship</p>
   <% end %>
 </div>
-
-
 <%# TESTIMONIAL %>
 <section class="projects-horizontal"></section>
-    <section class="testimonials-clean">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Testimonials </h2>
-                <p class="text-center">Our customers love us! Read what they have to say below. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
-            </div>
-            <div class="row people">
-                <div class="col-md-6 col-lg-4 item">
-                    <div class="box">
-                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
-                    </div>
-                    <div class="author"><img class="rounded-circle" src="assets/authors/1.jpg">
-                        <h5 class="name">Ben Johnson</h5>
-                        <p class="title">CEO of Company Inc.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 item">
-                    <div class="box">
-                        <p class="description">Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id.</p>
-                    </div>
-                    <div class="author"><img class="rounded-circle" src="assets/authors/3.jpg">
-                        <h5 class="name">Carl Kent</h5>
-                        <p class="title">Founder of Style Co.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 item">
-                    <div class="box">
-                        <p class="description">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
-                    </div>
-                    <div class="author"><img class="rounded-circle" src="assets/authors/2.jpg">
-                        <h5 class="name">Emily Clark</h5>
-                        <p class="title">Owner of Creative Ltd.</p>
-                    </div>
-                </div>
-            </div>
+<section class="testimonials-clean">
+  <div class="container">
+    <div class="intro">
+      <h2 class="text-center">Testimonials </h2>
+      <p class="text-center">Our customers love us! Read what they have to say below. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+    </div>
+    <div class="row people">
+      <div class="col-md-6 col-lg-4 item">
+        <div class="box">
+          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
         </div>
-    </section>
+        <div class="author"><img class="rounded-circle" src="assets/authors/1.jpg">
+          <h5 class="name">Ben Johnson</h5>
+          <p class="title">CEO of Company Inc.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 item">
+        <div class="box">
+          <p class="description">Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id.</p>
+        </div>
+        <div class="author"><img class="rounded-circle" src="assets/authors/3.jpg">
+          <h5 class="name">Carl Kent</h5>
+          <p class="title">Founder of Style Co.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 item">
+        <div class="box">
+          <p class="description">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+        </div>
+        <div class="author"><img class="rounded-circle" src="assets/authors/2.jpg">
+          <h5 class="name">Emily Clark</h5>
+          <p class="title">Owner of Creative Ltd.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
