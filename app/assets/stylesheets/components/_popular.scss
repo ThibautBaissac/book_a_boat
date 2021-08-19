@@ -3,8 +3,24 @@
   margin-bottom: 100px;
 }
 
+.popular .popular-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border: none;
+}
+
 .popular h4 {
-  text-shadow: 1px 1px 30px #373c42;
+  font-weight: 900;
+  color: white;
+  font-size: 30px;
+  text-shadow: 0 0 15px rgba(0,0,0,0.8);
+  letter-spacing: 1px;
+}
+
+.popular h5 {
+  font-weight: 600;
+  color: white;
+  font-size: 23px;
+  text-shadow: 0 0 15px rgba(0,0,0,0.8);
 }
 
 .popular img {

@@ -1,9 +1,25 @@
+.card-title-style {
+  color: $dark-blue;
+  font-size: 45px;
+  font-weight: 600;
+  margin: auto;
+  margin-top: 120px;
+  width: fit-content;
+  letter-spacing: 1px;
+
+  .star-size {
+    font-size: 35px;
+    vertical-align: middle;
+  }
+}
+
 // CATEGORY CARDS ON HOMEPAGE
 
 .category-size {
   width: 100px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
   overflow: hidden;
+  border: none;
 }
 .category-text {
   text-align: center;
@@ -22,7 +38,7 @@
   padding: 10px;
 }
 
-// LEASE CATEGORY ON HOMEPAGE
+// LEASE CARD ON HOMEPAGE
 
 .lease-card {
   height: 400px;
@@ -31,6 +47,8 @@
   background-size: cover;
   background-position: 0% 85%;
   border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .lease-card .lease-text {

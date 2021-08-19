@@ -13,38 +13,43 @@
       </div>
     <% end %>
 
-
   </div>
 </div>
+
 <%# POPULAR %>
 <div class="container popular">
-  <h2 class="text-center my-3">Popular boats</h2>
-  <div class="row">
+  <h2 class="text-center card-title-style"><span class="star-size">🏝️</span> Popular destinations <span class="star-size">🏝️</span></h2>
+  <div class="row" style="margin-top: 100px;">
     <div class="col-md-4 mb-3">
-      <div class="card"><a href="#"><%= image_tag "ships/barque_6.jpg", class: "card-img w-100 d-block" %></a>
-        <div class="card-img-overlay">
-          <h4 class="text-center">My amazing bark</h4>
+      <div class="card popular-card"><img src="https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YmVhY2h8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class= "card-img w-100 d-block" >
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+          <h4 class="text-center">Lampuuk beach</h4>
+          <h5 class="text-center">Indonesia</h5>
         </div>
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <div class="card"><a href="#"><%= image_tag "ships/boat_5.jpg", class: "card-img w-100 d-block" %></a>
-        <div class="card-img-overlay">
-          <h4 class="text-center">A great boat</h4>
+      <div class="card popular-card"><img src="https://images.unsplash.com/photo-1502060148048-7bf0a54ea24f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGZyYW5jZSUyMGJlYWNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="card-img w-100 d-block">
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+          <h4 class="text-center">Nice</h4>
+          <h5 class="text-center">France</h5>
         </div>
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <div class="card"><a href="#"><%= image_tag "ships/yacht.jpg", class: "card-img w-100 d-block" %></a>
-        <div class="card-img-overlay">
-          <h4 class="text-center">What a yacht!</h4>
+      <div class="card  popular-card"><img src="https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGlzbGFuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="card-img w-100 d-block">
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+          <h4 class="text-center">Isle of Pines</h4>
+          <h5 class="text-center">New Caledonia</h5>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <%# CATEGORIES %>
 <div class="container mt-5" id="category-container">
+  <h2 class="text-center card-title-style">🚢 Ship categories 🚢</h2>
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6" style="height: 350px;">
     <div class="col mb-4 mt-4 d-flex flex-column justify-content-center align-items-center">
       <div class="card category-size">
@@ -96,6 +101,7 @@
     </div>
   </div>
 </div>
+
 <%# Want to lease your boat? %>
 <div class="lease-card d-flex flex-column justify-content-center align-items-center" style="background-image: url(https://cdn.dribbble.com/users/7523955/screenshots/15709833/media/a3e93f3a41d983d57bc50410e2c5dbf6.jpg?compress=1&resize=1600x1200);">
   <h2 class="lease-text mb-5">Want to lease your boat? Nothing more simple!</h2>
@@ -103,13 +109,14 @@
     <p class="letter-spacing mb-0">Lease your ship</p>
   <% end %>
 </div>
+
 <%# TESTIMONIAL %>
-<section class="projects-horizontal"></section>
+<%# <section class="projects-horizontal"></section> %>
 <section class="testimonials-clean">
   <div class="container">
     <div class="intro">
-      <h2 class="text-center">Testimonials </h2>
-      <p class="text-center"> ❤️ Our customers love us and we love them! ❤️ <br> Read what they have to say below ▿ <br> A big thank you to our 5000+ customers all over the world! </p>
+      <h2 class="text-center">🥳 Testimonials 🥳</h2>
+      <p class="text-center" style="font-size: 20px; margin-top: 20px; color: white;"> ❤️ Our customers love us and we love them! ❤️ <br> Read what they have to say below ▿ <br> A big thank you to our 5000+ customers all over the world! </p>
     </div>
     <div class="row people">
       <div class="col-md-6 col-lg-4 item">
