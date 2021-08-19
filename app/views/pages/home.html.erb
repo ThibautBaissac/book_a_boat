@@ -44,9 +44,9 @@
   </div>
 </div>
 <%# CATEGORIES %>
-<div class="container mt-5">
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
-    <div class="col mb-4 d-flex flex-column justify-content-around align-items-center">
+<div class="container mt-5" id="category-container">
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6" style="height: 350px;">
+    <div class="col mb-4 mt-4 d-flex flex-column justify-content-center align-items-center">
       <div class="card category-size">
         <%= link_to ships_path(category: "Cabin cruiser"), class:"card-hover" do %>
           <%= image_tag("categories/boat-1.png", class:"card-img-top") %>
@@ -54,7 +54,7 @@
       </div>
       <p class="category-text">Cabin</p>
     </div>
-    <div class="col mb-4 d-flex flex-column justify-content-around align-items-center">
+    <div class="col mb-4 mt-4 d-flex flex-column justify-content-center align-items-center">
       <div class="card category-size">
         <%= link_to ships_path(category: "Yacht"), class:"card-hover" do %>
           <%= image_tag("categories/yatch-1.png", class:"card-img-top") %>
@@ -62,7 +62,7 @@
       </div>
       <p class="category-text">Yacht</p>
     </div>
-    <div class="col mb-4 d-flex flex-column justify-content-around align-items-center">
+    <div class="col mb-4 mt-4 d-flex flex-column justify-content-center align-items-center">
       <div class="card category-size">
         <%= link_to ships_path(category: "Bark"), class:"card-hover" do %>
           <%= image_tag("categories/boat-2.png", class:"card-img-top") %>
@@ -70,7 +70,7 @@
       </div>
       <p class="category-text">Bark</p>
     </div>
-    <div class="col mb-4 d-flex flex-column justify-content-around align-items-center">
+    <div class="col mb-4 mt-4 d-flex flex-column justify-content-center align-items-center">
       <div class="card category-size">
         <%= link_to ships_path(category: "Container carrier"), class:"card-hover" do %>
           <%= image_tag("categories/cargo-ship.png", class:"card-img-top") %>
@@ -78,7 +78,7 @@
       </div>
       <p class="category-text">Container</p>
     </div>
-    <div class="col mb-4 d-flex flex-column justify-content-around align-items-center">
+    <div class="col mb-4 mt-4 d-flex flex-column justify-content-center align-items-center">
       <div class="card category-size">
         <%= link_to ships_path(category: "Catamaran"), class:"card-hover" do %>
           <%= image_tag("categories/sailboat.png", class:"card-img-top") %>
@@ -86,7 +86,7 @@
       </div>
       <p class="category-text">Catamaran</p>
     </div>
-    <div class="col mb-4 d-flex flex-column justify-content-around align-items-center">
+    <div class="col mb-4 mt-4 d-flex flex-column justify-content-center align-items-center">
       <div class="card category-size">
         <%= link_to ships_path(category: "Pirate boat"), class:"card-hover" do %>
           <%= image_tag("categories/ship.png", class:"card-img-top") %>
