@@ -1,33 +1,43 @@
-<div class="container mt-5">
-  <div class="row justify-content-md-center">
-    <div class="col-md-6">
-      <h2>Sign up</h2>
+<div class="container mt-5 d-flex justify-content-center align-items-center">
+  <%# <div class="row justify-content-center align-items-center" > %>
+    <div class="col-md-6" style="background-color: #FFDBCC; width: 100%; height: 100%; padding: 20px; border-radius: 6px;">
+      <h2 class="text-center mb-5" >Sign up</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :first_name,
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                placeholder: "First name",
+                label: false %>
           <%= f.input :last_name,
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                placeholder: "Last name",
+                label: false %>
           <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email" },
+                placeholder: "Email",
+                label: false%>
           <%= f.input :avatar, as: :file %>
           <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                placeholder: "Password",
+                label: false %>
           <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                placeholder: "Password confirmation",
+                label: false %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "btn btn-primary mb-3" %> <%= render "devise/shared/links", class: "m-5" %>
         </div>
       <% end %>
     </div>
-  </div>
+  <%# </div> %>
 </div>
