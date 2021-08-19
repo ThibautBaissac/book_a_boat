@@ -5,9 +5,12 @@ class ShipsController < ApplicationController
   def index
     if params[:category].present?
       @ships = policy_scope(Ship).order(created_at: :desc).where(category: params[:category])
+    elsif params[:index][:category].present?
+      @ships = policy_scope(Ship).order(created_at: :desc).where(category: params[:index][:category])
     else
       @ships = policy_scope(Ship).order(created_at: :desc)
     end
+    @ships = @ships.near(params[:index][:address], 30) if params[:index] && params[:index][:address].present?
   end
 
   def show

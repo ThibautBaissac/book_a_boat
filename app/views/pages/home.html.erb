@@ -1,38 +1,19 @@
 <div class="banner-homepage d-flex justify-content-between align-items-center" style="background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(<%= image_path("banner/beach.png") %>);">
   <div class="banner-container">
     <h3 class="slogan text-center">Go boating and experience the best holiday of your life!</h3>
-    <form>
-      <div class="search-bar row d-flex align-items-center justify-content-around">
-        <div class="col col-padding  col-margin category-search">
-          <select class="form-control input-border input-focus first-input" placeholder="Category">
-            <option value="">Category</option>
-            <% ship_category = [] %>
-            <% @ships.each do |ship| %>
-              <% ship_category << ship.category %>
-              <% ship_category.uniq! %>
-            <% end %>
-            <% ship_category.each do |category| %>
-              <option value="<%= category.downcase.split(" ").join("-")%>"><%= category %></option>
-            <% end %>
-          </select>
-        </div>
+
+    <%= simple_form_for :index, url: ships_path, method: "GET" do |f| %>
+      <div class="search-bar d-flex justify-content-between">
+        <%= f.select :category, options_for_select(@ships.pluck(:category).uniq), input_html: { class: 'input-focus' }, prompt: 'Category' %>
         <div class="input-separation">|</div>
-        <%# <div class="col col-padding col-margin">
-          <input type="date" class="form-control input-border input-focus" placeholder="Boarding">
-        </div>
-        <div class="col col-padding  col-margin">
-          <input type="date" class="form-control input-border input-focus" placeholder="Landing">
-        </div> %>
-        <div class="col col-padding col-margin">
-          <input type="text" class="form-control input-focus" placeholder="Location" id="ship_address">
-        </div>
-        <div class="col col-padding search-btn-container">
-          <%= link_to root_path, class: "search-link" do %>
-            <i class="material-icons btn btn-success rounded-circle search-btn">sailing</i>
-          <% end %>
-        </div>
+        <%= f.input :address, input_html: {id:"ship_address", class: 'input-focus input-location'}, placeholder: 'Location', label: false %>
+        <%= button_tag type: "submit", class: "btn btn-success rounded-circle search-btn" do %>
+          <i class="material-icons">sailing</i>
+        <% end %>
       </div>
-    </form>
+    <% end %>
+
+
   </div>
 </div>
 <%# POPULAR %>
