@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   justify-content: space-between;
-  background-color: transparent;
+  background-color: white;
   width: 100%;
   padding: 10px 20px;
   z-index: 1000;
@@ -12,7 +12,7 @@
 }
 
 .navbar-lewagon.scroll {
-  background-color: white;
+  background-color: $light-blue;
 }
 
 .navbar-lewagon .navbar-brand img {
