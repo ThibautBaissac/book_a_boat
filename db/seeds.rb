@@ -28,25 +28,25 @@ user_6.save!
 puts "Creating demo ships..."
 cruiser = Ship.new(name: "Titan", description: "Superbe ITALIAMARINE SANREMO 24 en très bon état! Très agréable en navigation et confortable au mouillage avec ses 2 bains de soleil à l'avant et à l'arrière. Les entretiens du moteur sont réalisés par un professionnel, factures à l'appui. Moteur Mercury Verado 225 cv dont la réputation n'est plus à faire.", category: "Cruiser", address: "Riva del Carbon, 4637, 30124 Venezia VE, Italie", docking_number: 27, daily_price: 260, user: user_6)
 cruiser.save!
-puts "Created #{cruiser}!"
+puts "Created #{cruiser.name}!"
 yacht = Ship.new(name: "Véga", description: "Bonjour, Je vous propose à la location mon Yacht San Lorenzo 70 avec Fly (Rooftop), de 21 mètres de longueur pour une surface utile d'environ 100M2", category: "Yacht", address: "31 Marina Coastal Dr, Singapour", docking_number: 5, daily_price: 2600, user: user_6)
 yacht.save!
-puts "Created #{yacht}!"
+puts "Created #{yacht.name}!"
 bark = Ship.new(name: "Lubullule", description: "Bonjour et bienvenue à Paris
 Nous vous proposons notre barque en polyéthylène de 2013 excellent état, deux moteurs de 250cv, cabine spacieuse à l’avant.
 Idéale pour les sorties familiales, nous vous suggérons le Crackhead Tour le long du canal Saint-Martin.
 Réservez ce bateau, avec ou sans son équipage professionnel.", category: "Bark", address: "120 Quai de Jemmapes, Paris", docking_number: 42, daily_price: 190, user: user_6)
 bark.save!
-puts "Created #{bark}!"
+puts "Created #{bark.name}!"
 container = Ship.new(name: "Titus", description: "Superbe Porte-conteneur SANREMO 24 en très bon état! Très agréable en navigation et confortable avec son pont supérieur de 150m, parfait pour les boat parties!", category: "Container Carrier", address: "Port Suez, Égypte", docking_number: 21, daily_price: 90000, user: user_6)
 container.save!
-puts "Created #{container}!"
+puts "Created #{container.name}!"
 sailboat = Ship.new(name: "Vegedream", description: "Bonjour, Je vous propose à la location mon Yacht San Lorenzo 70 avec Fly (Rooftop), de 21 mètres de longueur pour une surface utile d'environ 100M2", category: "Sailboat", address: "Chau. Eric Tabarly, 35400 Saint-Malo", docking_number: 19, daily_price: 400, user: user_6)
 sailboat.save!
-puts "Created #{sailboat}!"
+puts "Created #{sailboat.name}!"
 pirate = Ship.new(name: "Black Pearl", description: "Le Black Pearl, anciennement Wicked Wench, est un navire pirate dirigé par le capitaine Jack Sparrow. Reconnaissable à ses voiles noires, le navire est surtout célèbre pour la malédiction qui pesait sur lui après la mutinerie d'Hector Barbossa, faisant du navire un navire maudit craint par tous. Il est connu comme le navire le plus rapide des Caraïbes.", category: "Pirate Boat", address: "F498+GJX, Santo Domingo 10210, République dominicaine", docking_number: 1, daily_price: 1890, user: user_6)
 pirate.save!
-puts "Created #{pirate}!"
+puts "Created #{pirate.name}!"
 
 puts "Creating ships..."
 5.times do

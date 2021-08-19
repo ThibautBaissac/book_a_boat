@@ -1,17 +1,27 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag "ships/barque_police_01.jpg", class: "d-block carousel_img rounded" %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "ships/barque_police_02.jpg", class: "d-block carousel_img rounded" %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "ships/barque_police_03.jpg", class: "d-block carousel_img rounded" %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "ships/barque_police_04.jpg", class: "d-block carousel_img rounded" %>
-    </div>
+    <% @ship.photos.each_with_index do |photo, index| %>
+      <% if photo[index] == 0 %>
+        <div class="carousel-item active">
+          <%= cl_image_tag(photo.key, height: 300, width: 400, crop: :fill) %>
+        </div>
+      <% else %>
+        <div class="carousel-item">
+          <%= cl_image_tag(photo.key, height: 300, width: 400, crop: :fill) %>
+        </div>
+      <% end %>
+    <% end %>
+      <%# <%= image_tag "ships/barque_police_01.jpg", class: "d-block carousel_img rounded" %>
+    <%# </div> %>
+    <%# <div class="carousel-item"> %>
+      <%# <%= image_tag "ships/barque_police_02.jpg", class: "d-block carousel_img rounded" %>
+    <%# </div> %>
+    <%# <div class="carousel-item"> %>
+      <%# <%= image_tag "ships/barque_police_03.jpg", class: "d-block carousel_img rounded" %>
+    <%# </div> %>
+    <%# <div class="carousel-item"> %>
+      <%# <%= image_tag "ships/barque_police_04.jpg", class: "d-block carousel_img rounded" %>
+    <%# </div> %>
     </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
