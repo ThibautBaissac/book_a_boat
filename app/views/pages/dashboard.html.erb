@@ -1,4 +1,9 @@
 <div class="container mt-4">
+    <div class='justify-content-end'>
+      <%= link_to new_ship_path, class: "btn-lease btn btn-success btn-md float-right" do %>
+        <p class="letter-spacing mb-0">Add a ship</p>
+      <% end %>
+    </div>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
       <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile</a>
@@ -10,6 +15,8 @@
       <a class="nav-link defaultOpen" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Bookings</a>
     </li>
   </ul>
+
+
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
       <ul>
@@ -29,15 +36,17 @@
           <div class="row">
             <% @user_ships.each do |ship| %>
               <div class="col-sm-4">
-                <div class="card mb-4" style="width: 18rem;">
+                <div class="card mt-4" style="width: 18rem;">
                   <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title"><%= ship.name %></h5>
-                    <div class="card-footer text-muted">
+                    <div class="card-footer text-muted h-75">
                       <p><%= ship.category %> <%= ship.daily_price%>€</p>
                       <p><%= ship.address %>, Spot: <%= ship.docking_number %></p>
                     </div>
-                    <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn btn-primary"%>   </div>
+                    <div class='justify-content-center'>
+                      <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md justify-center m-2"%>   </div>
+                    </div>
                 </div>
               </div>
             <% end %>
