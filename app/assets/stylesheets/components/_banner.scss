@@ -1,3 +1,5 @@
+// BANNER IMAGE
+
 .banner-homepage {
   background-size: cover;
   background-position: center;
@@ -7,6 +9,8 @@
   top: 0px;
   width: 100%;
 }
+
+// BANNER SLOGAN AND SEARCH
 
 .slogan {
   font-weight: 900;
@@ -23,6 +27,8 @@
   background-color: white;
   border-radius: 30px;
   padding: 6px;
+  width: 80%;
+  margin: auto;
 }
 
 .search-bar .col-padding {
@@ -41,12 +47,22 @@
 }
 
 .search-bar .input-border {
-  border-right: 1px solid grey;
   border-radius: 0px;
+}
+
+.search-bar .category-search {
+  width: 500px;
 }
 
 .search-bar .first-input {
   border-radius: 20% 0% 0% 20%;
+  padding-right: 20px;
+}
+
+.search-bar .input-separation {
+  border-right: 1px solid grey;
+  color: transparent;
+  margin-right: 20px;
 }
 
 .search-bar .input-focus:focus {
