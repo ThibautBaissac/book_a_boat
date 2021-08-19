@@ -62,6 +62,6 @@ class ShipsController < ApplicationController
   end
 
   def ship_params
-    params.require(:ship).permit(:user, :booking, :daily_price, :description, :name, :category, :address, :docking_number, :photo)
+    params.require(:ship).permit(:user, :booking, :daily_price, :description, :name, :category, :address, :docking_number, photos: [])
   end
 end
