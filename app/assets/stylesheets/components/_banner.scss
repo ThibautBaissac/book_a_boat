@@ -27,8 +27,9 @@
   background-color: white;
   border-radius: 30px;
   padding: 6px;
-  width: 80%;
+  width: 100%;
   margin: auto;
+  height: 52px;
 }
 
 .search-bar .col-padding {
@@ -60,9 +61,10 @@
 }
 
 .search-bar .input-separation {
-  border-right: 1px solid grey;
+  border-right: 2px solid rgb(226, 226, 226);
   color: transparent;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .search-bar .input-focus:focus {
@@ -79,9 +81,42 @@
   padding: 20;
 }
 
-.search-btn-container .search-btn{
+.search-btn{
   padding: 0;
   width: 40px;
   height: 40px;
-  line-height: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// SIMPLE FORM BANNER
+
+.search-bar select {
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  width: 24%;
+  margin-left: 10px;
+  font-size: 17px;
+  color: grey;
+  outline: 0;
+  padding: 5px;
+}
+
+.search-bar select:focus {
+  background-color: $light-blue;
+  border-radius: 20px;
+  border-right: none;
+  border: 3px #D6EBFF solid;
+  outline: 0;
+}
+
+#index-category {
+  border: none;
+}
+
+.search-bar .input-location {
+  width: 450px;
 }
