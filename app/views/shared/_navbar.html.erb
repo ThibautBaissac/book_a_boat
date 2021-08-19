@@ -4,10 +4,30 @@
     <h3 id="logo-title" class="ml-3 mb-0 text-display">book a boat</h3>
   <% end %>
 
+
   <% if current_user %>
-    <%= link_to destroy_user_session_path, method: :delete, class: "navbar-btn btn btn-success d-flex justify-content-between align-items-center" do %>
-      <p class="letter-spacing mb-0">Log out</p>
-    <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar-list-4">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://i.pravatar.cc/150?img=6" width="40" height="40" class="rounded-circle">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to dashboard_path do %>
+          <div class="dropdown-item" >Dashboard</div>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <div class="dropdown-item" >Log out</div>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
   <% else %>
     <%= link_to new_user_registration_path, class: "navbar-btn btn btn-success d-flex justify-content-between align-items-center" do %>
       <p class="letter-spacing mb-0">Sign up</p>
