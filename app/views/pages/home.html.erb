@@ -3,7 +3,7 @@
     <h3 class="slogan text-center">Go boating and experience the best holiday of your life!</h3>
     <form>
       <div class="search-bar row d-flex align-items-center justify-content-around">
-        <div class="col col-padding  col-margin">
+        <div class="col col-padding  col-margin category-search">
           <select class="form-control input-border input-focus first-input" placeholder="Category">
             <option value="">Category</option>
             <% ship_category = [] %>
@@ -16,12 +16,13 @@
             <% end %>
           </select>
         </div>
-        <div class="col col-padding col-margin">
+        <div class="input-separation">|</div>
+        <%# <div class="col col-padding col-margin">
           <input type="date" class="form-control input-border input-focus" placeholder="Boarding">
         </div>
         <div class="col col-padding  col-margin">
           <input type="date" class="form-control input-border input-focus" placeholder="Landing">
-        </div>
+        </div> %>
         <div class="col col-padding col-margin">
           <input type="text" class="form-control input-focus" placeholder="Location" id="ship_address">
         </div>
