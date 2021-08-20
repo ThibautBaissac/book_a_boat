@@ -52,7 +52,7 @@
           </div>
           <div class="row">
             <% @user_ships.each do |ship| %>
-              <div class="col-sm-4 mb-5" style="height: 650px;">
+              <div class="col-sm-4 mb-5" style="height: 670px;">
                 <div class="card mt-4 h-100">
                   <% if ship.photos.attached? %>
                     <%= cl_image_tag(ship.photos.first.key, class: "card-img-top", style:"height: 50%; object-fit: cover;") %>
