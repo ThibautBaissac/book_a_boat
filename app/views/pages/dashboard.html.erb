@@ -15,6 +15,7 @@
       <a class="nav-link defaultOpen" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Bookings</a>
     </li>
   </ul>
+  <%# MY PROFILE SECTION %>
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
       <ul style="padding-left: 0;">
@@ -43,12 +44,16 @@
           </div>
         </section>
       </div>
+      <%# MY SHIPS SECTION %>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
         <ul>
+        <div class='d-flex justify-content-center'>
+          <h3>My Owned Boats</h3>
+        </div>
           <div class="row">
             <% @user_ships.each do |ship| %>
               <div class="col-sm-4">
-                <div class="card mt-4" style="width: 18rem;">
+                <div class="card m-4" style="width: 18rem;">
                   <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title"><%= ship.name %></h5>
@@ -63,7 +68,30 @@
               </div>
             <% end %>
           </ul>
+        <%# MY FAKE RENTED SHIPS !! JUST FOR DEMO TONIGHT %>
+          <ul>
+          <div class='d-flex justify-content-center'>
+            <h3>My Boats Being Rented</h3>
+          </div>
+          <div class="row">
+              <div class="col-sm-4">
+                <div class="card mt-4 ml-4" style="width: 18rem;">
+                <img class="card-img-top" id="booked-card-img-top" src="<%= image_path("categories/sailing.png") %>" alt="Card image cap" style= "height: 50%; object-fit: cover;">
+                  <div class="card-body" id="booked-card">
+                    <h5 class="card-title">Gallen</h5>
+                    <div class="card-footer text-muted h-75">
+                      <p>Rented by: <strong>Team Ellii</strong></p>
+                      <p>From: <strong>August 22 - August 25</strong></p>
+                    </div>
+                    <div class='justify-content-center'>
+                      <%= link_to "Manage Booking", dashboard_path, class: "btn-lease btn btn-success btn-md justify-center m-2"%>   </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
         </div>
+        <%# MY BOOKINGS %>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
           <ul>
             <% @user_bookings.each do |booking| %>
