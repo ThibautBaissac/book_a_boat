@@ -47,84 +47,86 @@
       <%# MY SHIPS SECTION %>
       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
         <ul>
-        <div class='d-flex justify-content-center'>
-          <h3>My Owned Boats</h3>
-        </div>
+          <div class='d-flex justify-content-center'>
+            <h3>My Owned Boats</h3>
+          </div>
           <div class="row">
             <% @user_ships.each do |ship| %>
               <div class="col-sm-4 mb-5">
-
                 <div class="card mt-4 h-100">
                   <% if ship.photos.attached? %>
                     <%= cl_image_tag(ship.photos.first.key, class: "card-img-top", style:"height: 50%; object-fit: cover;") %>
                   <% else %>
                     <img class="card-img-top" src="https://source.unsplash.com/random" style="height: 50%; object-fit: cover;" alt="Card image cap">
                   <% end %>
-
                   <div class="card-body d-flex flex-column justify-content-between">
                     <h5 class="card-title"><%= ship.name %></h5>
                     <div class="card-footer text-muted flex-grow-1 mb-3 d-flex flex-column justify-content-between">
                       <p><i class="fas fa-ship mr-2" style="color:#FB743C;"></i> <%= ship.category %></p>
                       <p><i class="fas fa-coins mr-2" style="color:#FB743C;"></i> <%= ship.daily_price%>€ / day</p>
                       <p><i class="fas fa-compass mr-2" style="color:#FB743C;"></i> <%= ship.address %>
-                      <p><i class="fas fa-dharmachakra mr-2" style="color:#FB743C;"></i> dock <%= ship.docking_number %></p>
+                        <p><i class="fas fa-dharmachakra mr-2" style="color:#FB743C;"></i> dock <%= ship.docking_number %></p>
+                      </div>
+                      <div>
+                        <%= link_to "Manage Boat", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md btn-block"%>
+                      </div>
                     </div>
-                    <div>
-                      <%= link_to "Manage Boat", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md btn-block"%>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
+            <%# MY FAKE RENTED SHIPS !! JUST FOR DEMO TONIGHT %>
+            <ul>
+              <div class='d-flex justify-content-center'>
+                <h3>My Boats Being Rented</h3>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="card mt-4 " style="width: 18rem;">
+                <img class="card-img-top" id="booked-card-img-top" src="<%= image_path("ships/boat_5.jpg") %>" alt="Card image cap" style= "height: 50%; object-fit: cover;">
+                    <div class="card-body" id="booked-card">
+                      <h5 class="card-title">Gallen</h5>
+                      <div class="card-footer text-muted h-75">
+                        <p>Rented by: <strong>Team Ellii</strong></p>
+                        <p>From: <strong>August 22 - August 25</strong></p>
+                      </div>
+                      <div class='justify-content-center'>
+                        <%= link_to "Manage Booking", dashboard_path, class: "btn-lease btn btn-success btn-md btn-block mt-3"%>   </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <%# MY BOOKINGS %>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <ul>
+              <% @user_bookings.each do |booking| %>
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <% if booking.ship.photos.attached? %>
+                        <%= cl_image_tag(booking.ship.photos.first.key, class: "card-img-top", style:"object-fit: cover; height: 100%; border-radius: 14px;") %>
+                      <% else %>
+                        <img class="card-img-top" src="https://source.unsplash.com/random" style="object-fit: cover; height: 100%; border-radius: 14px;" alt="Card image cap">
+                      <% end %>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= booking.ship.name %></h5>
+                        <p class="card-text"><strong>Start date:</strong> <%= booking.start_date %></p>
+                        <p class="card-text"><strong>End date:</strong> <%= booking.end_date %></p>
+                        <%= link_to '<i class="fa fa-trash "></i>'.html_safe,
+                          booking_path(booking),
+                          method: :delete,
+                          data: { confirm: "Delete this booking?" } %>
+                      </li>
                     </div>
                   </div>
                 </div>
               </div>
             <% end %>
           </ul>
-        <%# MY FAKE RENTED SHIPS !! JUST FOR DEMO TONIGHT %>
-          <ul>
-          <div class='d-flex justify-content-center'>
-            <h3>My Boats Being Rented</h3>
-          </div>
-          <div class="row">
-              <div class="col-sm-4">
-                <div class="card mt-4 " style="width: 18rem;">
-                <img class="card-img-top" id="booked-card-img-top" src="<%= image_path("ships/boat_5.jpg") %>" alt="Card image cap" style= "height: 50%; object-fit: cover;">
-                  <div class="card-body" id="booked-card">
-                    <h5 class="card-title">Gallen</h5>
-                    <div class="card-footer text-muted h-75">
-                      <p>Rented by: <strong>Team Ellii</strong></p>
-                      <p>From: <strong>August 22 - August 25</strong></p>
-                    </div>
-                    <div class='justify-content-center'>
-                      <%= link_to "Manage Booking", dashboard_path, class: "btn-lease btn btn-success btn-md btn-block mt-3"%>   </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ul>
         </div>
-        <%# MY BOOKINGS %>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-          <ul>
-            <% @user_bookings.each do |booking| %>
-              <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img class="card-img-top" style="object-fit: cover; height: 100%; border-radius: 14px" src="<%= image_path("ships/barque_police_01.jpg") %>" alt="Card image cap">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title"><%= booking.ship.name %></h5>
-                      <p class="card-text"><strong>Start date:</strong> <%= booking.start_date %></p>
-                      <p class="card-text"><strong>End date:</strong> <%= booking.end_date %></p>
-                      <%= link_to '<i class="fa fa-trash "></i>'.html_safe,
-                          booking_path(booking),
-                          method: :delete,
-                          data: { confirm: "Delete this booking?" } %>
-                    </li>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </ul>
       </div>
     </div>
-  </div>
