@@ -1,5 +1,7 @@
 const activeTab = () => {
-  document.querySelector(".defaultOpen").click();
+  if (document.querySelector(".defaultOpen")) {
+    document.querySelector(".defaultOpen").click();
+  }
 };
 
 export { activeTab };
