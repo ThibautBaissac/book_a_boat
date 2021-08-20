@@ -57,8 +57,10 @@
                   <div class="card-body">
                     <h5 class="card-title"><%= ship.name %></h5>
                     <div class="card-footer text-muted h-75">
-                      <p><%= ship.category %> <%= ship.daily_price%>€</p>
-                      <p><%= ship.address %>, Spot: <%= ship.docking_number %></p>
+                      <p><i class="fas fa-ship mr-2" style="color:#FB743C;"></i> <%= ship.category %></p>
+                      <p><i class="fas fa-coins mr-2" style="color:#FB743C;"></i> <%= ship.daily_price%>€ / day</p>
+                      <p><i class="fas fa-compass mr-2" style="color:#FB743C;"></i> <%= ship.address %>
+                      <p><i class="fas fa-dharmachakra mr-2" style="color:#FB743C;"></i> dock <%= ship.docking_number %></p>
                     </div>
                     <div class='justify-content-center'>
                       <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md justify-center m-2"%>   </div>

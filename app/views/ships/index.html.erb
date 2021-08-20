@@ -19,8 +19,9 @@
           <div class="card-body d-flex flex-column justify-content-between">
             <h5 class="card-title"><%= ship.name %></h5>
             <div class="card-footer text-muted flex-grow-1">
-              <p><%= ship.category %> <%= ship.daily_price%>€ la journée</p>
-              <p><%= ship.address %>, Spot: <%= ship.docking_number %></p>
+              <p><i class="fas fa-ship mr-2" style="color:#FB743C;"></i> <%= ship.category %></p>
+              <p><i class="fas fa-coins mr-2" style="color:#FB743C;"></i> <%= ship.daily_price%>€ / day</p>
+              <p><i class="fas fa-compass mr-2" style="color:#FB743C;"></i> <%= ship.address %>
             </div>
             <%= link_to "Learn more", ship_path(ship), class: "btn btn-success mt-3 text-center", style:"width: 150px; margin: auto;"%>   </div>
         </div>
