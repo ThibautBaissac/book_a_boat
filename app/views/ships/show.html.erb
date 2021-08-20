@@ -13,10 +13,10 @@
               <h1><%= @ship.name %></h1>
             </div>
           </div>
-          <p><strong>Category:</strong> <%= @ship.category %></p>
-          <p><strong>Daily price:</strong> <%= @ship.daily_price %></p>
-          <p><strong>Address:</strong> <%= @ship.address %></p>
-          <p><strong>Docking number:</strong> <%= @ship.docking_number %></p>
+          <p><i class="fas fa-ship mr-2" style="color:#FB743C;"></i> <%= @ship.category %></p>
+          <p><i class="fas fa-coins mr-2" style="color:#FB743C;"></i> <%= @ship.daily_price %> € per day</p>
+          <p><i class="fas fa-compass mr-2" style="color:#FB743C;"></i> <%= @ship.address %></p>
+          <p><i class="fas fa-dharmachakra mr-2" style="color:#FB743C;"></i> dock <%= @ship.docking_number %></p>
         </div>
       </div>
       <%# SHIP DESCRIPTION %>
