@@ -1,0 +1,30 @@
+.new-lease-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url("https://images.unsplash.com/photo-1627024216712-ccc7921250b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3751&q=80");
+  background-size: cover;
+}
+
+.new-lease-container .form-background {
+  background-color: rgba($color: #ffffff, $alpha: 0.5);
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.new-lease-container .form-size {
+  width: 80%;
+}
+
+.new-lease-container .input-height {
+  background-color: royalblue;
+}
+
+.new-lease-container select {
+  color: #6A737B;
+}
+
+@media (min-width: 1200px) {
+  .new-lease-container {
+    max-width: 100vw;
+  }
+}

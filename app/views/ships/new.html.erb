@@ -1,15 +1,39 @@
-<div class="container">
+<div class="container new-lease-container" style="">
   <div class="row justify-content-md-center">
       <%# CAROUSEL %>
-      <div class="col-sm-6">  <%= simple_form_for @ship do |f| %>
-          <%= f.input :name %>
-          <%= f.input :category, :collection => ["Boat", "Cruise", "Pirate boat", "Yacht", "Pedal boat", "Rowboat", "Bark", "Catamaran", "Countainer carrier", "Paper boat", "Flamingo boat", "Vessel", "Sailboat", "Optimist", "Laser", "Sailing Regatta", "Jet Boats", "Cabin Cruisers"] %>
-          <%= f.input :daily_price %>
-          <%= f.input :address %>
-          <%= f.input :docking_number %>
-          <%= f.input :description %>
+      <div class="col-sm-6 form-background">
+        <h2 class="text-center mb-5" style="color: #0D2660; font-weight: 600;">Lease a boat</h2>
+        <%= simple_form_for @ship, class:"fomr-size" do |f| %>
+          <%= f.input :name,
+              placeholder: "Boat name",
+              label: false,
+              class: "input-height"  %>
+          <p class="mt-4"> </p>
+          <%= f.input :category,
+              :collection => ["Boat", "Cruise", "Pirate boat", "Yacht", "Pedal boat", "Rowboat", "Bark", "Catamaran", "Countainer carrier", "Paper boat", "Flamingo boat", "Vessel", "Sailboat", "Optimist", "Laser", "Sailing Regatta", "Jet Boats", "Cabin Cruisers"],
+              prompt: 'Category',
+              label: false
+              %>
+          <p class="mt-4"> </p>
+          <%= f.input :daily_price,
+              placeholder: "Daily price (€)",
+              label: false %>
+          <p class="mt-4"> </p>
+          <%= f.input :address,
+              placeholder: "Address",
+              label: false %>
+          <p class="mt-4"> </p>
+          <%= f.input :docking_number,
+              placeholder: "Docking number",
+              label: false %>
+          <p class="mt-4"> </p>
+          <%= f.input :description,
+              placeholder: "Description",
+              label: false %>
+          <p class="mt-4"> </p>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.button :submit, "Add Boat", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+          <p class="mt-4"> </p>
+          <%= f.button :submit, "Lease my boat", class: "btn btn-success btn-lg btn-block" %>
         <% end %>
       </div>
     </div>
