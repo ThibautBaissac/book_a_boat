@@ -53,8 +53,14 @@
           <div class="row">
             <% @user_ships.each do |ship| %>
               <div class="col-sm-4">
-                <div class="card m-4" style="width: 18rem;">
-                  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+
+                <div class="card mt-4" style="width: 18rem;">
+                  <% if ship.photos.attached? %>
+                    <%= cl_image_tag(ship.photos.first.key, class: "card-img-top") %>
+                  <% else %>
+                    <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+                  <% end %>
+
                   <div class="card-body">
                     <h5 class="card-title"><%= ship.name %></h5>
                     <div class="card-footer text-muted h-75">
