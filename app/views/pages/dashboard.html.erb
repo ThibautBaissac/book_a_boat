@@ -54,7 +54,7 @@
             <% @user_ships.each do |ship| %>
               <div class="col-sm-4 mb-5">
 
-                <div class="card mt-4 h-100" style="width: 18rem;">
+                <div class="card mt-4 h-100">
                   <% if ship.photos.attached? %>
                     <%= cl_image_tag(ship.photos.first.key, class: "card-img-top", style:"height: 50%; object-fit: cover;") %>
                   <% else %>
@@ -63,14 +63,14 @@
 
                   <div class="card-body d-flex flex-column justify-content-between">
                     <h5 class="card-title"><%= ship.name %></h5>
-                    <div class="card-footer text-muted flex-grow-1">
+                    <div class="card-footer text-muted flex-grow-1 mb-3 d-flex flex-column justify-content-between">
                       <p><i class="fas fa-ship mr-2" style="color:#FB743C;"></i> <%= ship.category %></p>
                       <p><i class="fas fa-coins mr-2" style="color:#FB743C;"></i> <%= ship.daily_price%>€ / day</p>
                       <p><i class="fas fa-compass mr-2" style="color:#FB743C;"></i> <%= ship.address %>
                       <p><i class="fas fa-dharmachakra mr-2" style="color:#FB743C;"></i> dock <%= ship.docking_number %></p>
                     </div>
                     <div>
-                      <%= link_to "Manage Boat", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md justify-center m-2"%>
+                      <%= link_to "Manage Boat", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md btn-block"%>
                     </div>
                   </div>
                 </div>
