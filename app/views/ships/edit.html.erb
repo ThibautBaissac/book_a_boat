@@ -8,12 +8,14 @@
     <%= f.input :docking_number %>
     <%= f.input :description %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, "Confirm Edit", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+    <%= f.button :submit, "Confirm Edit", class: "btn btn-success btn-lg btn-block btn-booking" %>
   <% end %>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_delete_confirmation">
-    <%= "Delete #{@ship.name}" %>
-  </button>
-  <%= render 'shared/modal_delete_confirmation', ship: @ship %>
+      <div class="row justify-content-md-center">
+        <button type="button" class="btn btn-warning mt-4" data-toggle="modal" data-target="#modal_delete_confirmation">
+          <i class="fa fa-trash"></i>
+        </button>
+        <%= render 'shared/modal_delete_confirmation', ship: @ship %>
+      </div>
     </div>
   </div>
 </div>
