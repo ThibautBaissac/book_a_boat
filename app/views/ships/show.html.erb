@@ -46,10 +46,10 @@
 
     </div>
     <%# BOOKING %>
-    <div class='mb-4 booking-card'>
+    <div class='mb-4 booking-card' id='ship-booking-dates'>
       <%= simple_form_for [@ship, @booking] do |f| %>
-        <%= f.input :start_date, as: :date, html5: true, label: "Boarding" %>
-        <%= f.input :end_date, as: :date, html5: true, label: "Landing" %>
+        <%= f.input :start_date, as: :string, label: "Boarding", required: false, input_html: {class: "datepicker"}, placeholder: "yyyy-mm-dd" %>
+        <%= f.input :end_date, as: :string, label: "Landing", required: false, input_html: {class: "datepicker"}, placeholder: "yyyy-mm-dd" %>
         <%= f.button :submit, "Book", class: "btn btn-success btn-lg btn-block btn-booking" %>
       <% end %>
     </div>

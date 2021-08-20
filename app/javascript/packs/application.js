@@ -28,6 +28,8 @@ import { navbarOpacity } from "../components/_navbar";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 import { activeTab } from "../components/_tab";
+import { initFlatpickr } from "../plugins/flatpickr";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -41,4 +43,5 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   navbarOpacity();
   activeTab();
+  initFlatpickr();
 });
