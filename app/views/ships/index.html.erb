@@ -9,7 +9,7 @@
   <% end %>
   <div class="row row-cols-1 row-cols-lg-3 justify-content-center">
     <% @ships.each do |ship| %>
-      <div class="col mb-5" style="padding: 0 20px;">
+      <div class="col mb-5" style="padding: 0 20px; height: 600px;">
         <div class="card h-100" style="box-shadow: 0 0 15px rgba(0,0,0,0.2);">
           <% if ship.photos.attached? %>
             <%= cl_image_tag ship.photos.first.key, class:"card-img-top", style:"height: 50%; object-fit: cover;" %>
