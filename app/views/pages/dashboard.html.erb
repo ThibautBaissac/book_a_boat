@@ -53,14 +53,12 @@
           <div class="row">
             <% @user_ships.each do |ship| %>
               <div class="col-sm-4">
-
                 <div class="card mt-4" style="width: 18rem;">
                   <% if ship.photos.attached? %>
                     <%= cl_image_tag(ship.photos.first.key, class: "card-img-top") %>
                   <% else %>
                     <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
                   <% end %>
-
                   <div class="card-body">
                     <h5 class="card-title"><%= ship.name %></h5>
                     <div class="card-footer text-muted h-75">
@@ -104,7 +102,11 @@
               <div class="card mb-3" style="max-width: 540px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img class="card-img-top" style="object-fit: cover; height: 100%; border-radius: 14px" src="<%= image_path("ships/barque_police_01.jpg") %>" alt="Card image cap">
+                    <% if booking.ship.photos.attached? %>
+                      <%= cl_image_tag(booking.ship.photos.first.key, class: "card-img-top", style: "object-fit: cover; height: 100%; border-radius: 14px") %>
+                    <% else %>
+                      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+                    <% end %>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
