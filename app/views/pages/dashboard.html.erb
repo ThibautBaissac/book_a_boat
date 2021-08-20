@@ -52,23 +52,24 @@
         </div>
           <div class="row">
             <% @user_ships.each do |ship| %>
-              <div class="col-sm-4">
+              <div class="col-sm-4 mb-5">
 
-                <div class="card mt-4" style="width: 18rem;">
+                <div class="card mt-4 h-100" style="width: 18rem;">
                   <% if ship.photos.attached? %>
-                    <%= cl_image_tag(ship.photos.first.key, class: "card-img-top") %>
+                    <%= cl_image_tag(ship.photos.first.key, class: "card-img-top", style:"height: 50%; object-fit: cover;") %>
                   <% else %>
-                    <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+                    <img class="card-img-top" src="https://source.unsplash.com/random" style="height: 50%; object-fit: cover;" alt="Card image cap">
                   <% end %>
 
-                  <div class="card-body">
+                  <div class="card-body d-flex flex-column justify-content-between">
                     <h5 class="card-title"><%= ship.name %></h5>
-                    <div class="card-footer text-muted h-75">
+                    <div class="card-footer text-muted flex-grow-1">
                       <p><%= ship.category %> <%= ship.daily_price%>€</p>
                       <p><%= ship.address %>, Spot: <%= ship.docking_number %></p>
                     </div>
-                    <div class='justify-content-center'>
-                      <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md justify-center m-2"%>   </div>
+                    <div>
+                      <%= link_to "Manage Ship", edit_ship_path(ship), class: "btn-lease btn btn-success btn-md btn-block mt-3" %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -90,7 +91,7 @@
                       <p>From: <strong>August 22 - August 25</strong></p>
                     </div>
                     <div class='justify-content-center'>
-                      <%= link_to "Manage Booking", dashboard_path, class: "btn-lease btn btn-success btn-md justify-center m-2"%>   </div>
+                      <%= link_to "Manage Booking", dashboard_path, class: "btn-lease btn btn-success btn-md btn-block mt-3"%>   </div>
                   </div>
                 </div>
               </div>
